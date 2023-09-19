@@ -59,7 +59,7 @@ exports.login = (req,res)=>{
             username: data.username, // 用户名
             // 其他用户相关的信息可以在这里添加
         };
-        const token = jwt.sign(payload,secretKey,{expiresIn:'5h'})    //  设置token 有效时长10h
+        const token = jwt.sign(payload,secretKey,{expiresIn:'10h'})    //  设置token 有效时长10h
         return res.json({
             code:200,
             msg:"登录成功",
