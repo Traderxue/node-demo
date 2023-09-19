@@ -14,7 +14,7 @@ exports.regUser = (req,res)=>{
     db.query(sql,data.username,(err,result)=>{
        if(err || result.length>0){
         return res.json({
-            code:200,
+            code:400,
             msg:"用户已存在"
         })
        }
@@ -24,7 +24,7 @@ exports.regUser = (req,res)=>{
         db.query(sqlStr,[data.username,data.password],(err,result)=>{
             if(err){
                 return res.json({
-                    code:200,
+                    code:400,
                     msg:err.message
                 })
             }
@@ -43,7 +43,7 @@ exports.login = (req,res)=>{
     db.query(sql,data.username,(err,result)=>{
         if(err||result==0){
             return res.json({
-                code:200,
+                code:400,
                 msg:"该用户不存在"
             })
         }
@@ -51,7 +51,7 @@ exports.login = (req,res)=>{
         const passwordMatch =bcrypt.compareSync(data.password, storedHash)
         if(!passwordMatch){
             return res.json({
-                code:200,
+                code:400,
                 msg:"用户名密码不匹配"
             })
         }

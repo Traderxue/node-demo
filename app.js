@@ -24,6 +24,8 @@ const userInfo = require("./router/userInfo.js")
 app.use('/my',userInfo)
 const artcate = require("./router/artcate.js")
 app.use('/my',artcate)
+const article = require("./router/article.js")
+app.use('/my',article)
 
 //错误级别中间级
 app.use((err,req,res,next)=>{
