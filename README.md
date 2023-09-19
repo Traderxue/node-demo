@@ -2,9 +2,16 @@
 
 node版本 18+
 
-## Recommended IDE Setup
+## 实现功能
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+用户登录
+用户注册
+查询用户信息
+更新用户信息
+重置用户密码
+更换用户头像
+
+获取文章分类
 
 
 ## 安装

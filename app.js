@@ -22,6 +22,8 @@ const userRouter = require("./router/user.js")
 app.use('/api',userRouter)
 const userInfo = require("./router/userInfo.js")
 app.use('/my',userInfo)
+const artcate = require("./router/artcate.js")
+app.use('/my',artcate)
 
 //错误级别中间级
 app.use((err,req,res,next)=>{

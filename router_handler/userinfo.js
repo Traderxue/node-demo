@@ -72,3 +72,20 @@ exports.updatepwd = (req,res)=>{
 
     })
 }
+
+exports.updateAvatar = (req,res)=>{
+    const data = req.body
+    const sql = "update tb_users set user_pic = ? where username=?"
+    db.query(sql,[data.user_pic,data.username],(err,result)=>{
+        if(err||result.affectedRows!==1){
+            return res.json({
+                code:400,
+                msg:"更新用户头像失败"
+            })
+        }
+        return res.json({
+            code:200,
+            msg:"更新用户头像成功"
+        })
+    })
+}
