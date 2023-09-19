@@ -20,11 +20,14 @@ app.use(expressJWT({secret:'123456'}).unless({path:[/^\/api\//]}))
 //路由模块
 const userRouter = require("./router/user.js")
 app.use('/api',userRouter)
+const userInfo = require("./router/userInfo.js")
+app.use('/my',userInfo)
 
 //错误级别中间级
 app.use((err,req,res,next)=>{
-    if(err){
-        return console.log("出错了")
+    if (err) {
+        console.error(err.message);
+        res.status(err.status || 500).json({ error: err.message });
     }
 })
 
